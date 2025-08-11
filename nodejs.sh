@@ -6,6 +6,9 @@ set -o pipefail
 # Update 
 sudo apt update
 
+# MPM
+sudo apt -y npm
+
 # Install fnm
 if ! command -v fnm >/dev/null 2>&1; then
     echo "Installing fnm (Fast Node Manager)..."
@@ -71,6 +74,9 @@ fi
 # Install NestJS CLI
 echo "Installing NestJS CLI globally..."
 sudo npm install -g @nestjs/cli
+
+# Wait
+wait
 
 # Initialize
 npm init -y
