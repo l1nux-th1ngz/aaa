@@ -1,16 +1,17 @@
 #!/bin/bash
 
-# Install Go
-sudo apt -y install golang
+# Download
+wget https://go.dev/dl/go1.24.6.linux-amd64.tar.gz
 
-# Set environment variables
-echo 'export GOROOT=/usr/lib/go' >> ~/.bashrc
+# Out with the old in with the new
+sudo rm -rf /usr/local/go && tar -C /usr/local -xzf go1.24.6.linux-amd64.tar.gz
+
+# Set variables
+echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
 echo 'export GOPATH=$HOME/Go' >> ~/.bashrc
 echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> ~/.bashrc
 
-# Source the .bashrc file to apply changes permanently
-# Note: This will only affect the current shell session. 
-# To apply changes in new terminal sessions, you need to restart the terminal or run the source command manually.
+# Source
 source ~/.bashrc
 
 # Create Go workspace directory
