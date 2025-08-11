@@ -1,26 +1,26 @@
 #!/bin/sh
 
-# Remove and purge existing Rust compiler
+# Remove
 sudo apt -y remove --purge rustc
 
-# Install rustup, the Rust toolchain installer
+# Install
 sudo apt -y install rustup
 
-# Updat
+# Update
 rustup self update
 rustup update
 
-# Install
+# Install toolchains
 rustup install stable
 rustup install nightly
 
 # Set default toolchain
 rustup default nightly
 
-# Add rustfmt
+# Add rustfmt component
 rustup component add rustfmt
 
-# Source 
+# Source the cargo environment
 source $HOME/.cargo/env
 
 # Wait :)
