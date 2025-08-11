@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Install Go
 sudo apt -y install golang
